@@ -64,4 +64,14 @@ frontend:
 
 If you plan to use more than one icon library, add it/them in this section.
 
+________
+USING THE LIBRARY
+
+These icons can be used in a similar manner to the MDI set that are native to Home Assistant, substituting 'baw' for 'mdi' in the name:
+
+```
+icon: mdi:gauge
+
+icon: baw:sports-car
+```
 
