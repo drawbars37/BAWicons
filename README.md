@@ -21,9 +21,13 @@ If you don't program and can't draw/modify existing icon files, feel free to sug
 this library.  I make no promise that I will add them, though.  I am retired and this programming
 is something of a hobby:
 
-  * The more HA users who request a particular icon, the more likely that I will create it.  That said, continually asking me to make your favorite icon will *not* improve the odds; in fact, it may have the opposite effect.
+  * The more HA users who request a particular icon, the more likely that I will create it.  That said,
+    continually asking me to make your favorite icon will *not* improve the odds; in fact, it may have the opposite effect.
+
   * If the icon is a small modification to one of my existing icons, I will probably add it.
+
   * If I find a particular suggestion useful for my own needs, it will improve the priority of that icon.
+
   * I won't likely make more than one content-based release per month.
 
 ________
@@ -36,16 +40,25 @@ as well as any other icon source used as a starting point for new icons.
 The overall structure of the library is a .js file with an array called 'BAW_ICONS_MAP' -- which
 can be changed if you create a new library -- containing a series of elements:
 
-* Each element should be based on a single-path 2-color SVG file of native size 24x24 pixels.  Files with a larger native size will often work, but will result in tiny icons that need to be artificially expanded in Lovelace UIs; sometimes, the required expansion will have unwanted effects.
-* The first line of the element contains the icon name in double-quotes, followed by a colon.
-* The second line contains the path from the corresponding SVG file, stripped of any extra characters not contained between the two double-quotes.
-* The second line of every element *except the last one* should end with a comma.
+  * Each element should be based on a single-path 2-color SVG file of native size 24x24 pixels.  Files
+    with a larger native size will often work, but will result in tiny icons that need to be artificially
+    expanded in Lovelace UIs; sometimes, the required expansion will have unwanted effects.
+
+  * The first line of the element contains the icon name in double-quotes, followed by a colon.
+
+  * The second line contains the path from the corresponding SVG file, stripped of any extra characters
+    not contained between the two double-quotes.
+
+  * The second line of every element *except the last one* should end with a comma.
 
 There are some other items near the bottom of the .js file that need to be changed:
 
-* The iconsetHTML array name, BAW_ICONS_MAP, can be changed, but care should be taken to replace all instances of the name.
-* The iconset.name is "baw".  If you create your own library, this name can be changed.
-* The iconset.size should be updated to match the number of icons in the library.
+  * The iconsetHTML array name, BAW_ICONS_MAP, can be changed, but care should be taken to replace all
+    instances of the name.
+
+  * The iconset.name is "baw".  If you create your own library, this name can be changed.
+
+  * The iconset.size should be updated to match the number of icons in the library.
 
 ________
 INSTALLING THE LIBRARY
