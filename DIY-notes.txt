@@ -46,6 +46,14 @@ files.
 
   * Count up the number of icons in the map and set iconset.size to that number.
 
+________
+NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. If this
+      is the case with your setup, the new icon library will likely be blank. In the case
+      of Google Chrome, these elements are called the Browsing Data; the name may vary
+      with other browsers. If the saved data is deleted, the browser will recreate the
+      library and everything should work as expected.
+
+
 That’s it! :-)
 
 Bruce Wahler

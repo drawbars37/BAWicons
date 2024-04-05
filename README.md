@@ -77,6 +77,13 @@ frontend:
 
 If you plan to use more than one icon library, add it/them in this section.
 
+* NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. If this
+  is the case with your setup, the newly installed icon library will likely be blank.
+  In the case of Google Chrome, these elements are called the Browsing Data; the name
+  may vary with other browsers. If the saved data is deleted, the browser will
+  recreate the library and everything should work as expected.
+
+
 ________
 USING THE LIBRARY
 
