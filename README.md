@@ -6,10 +6,16 @@ hass-bha-icons, a similar collection from github user 'hulkhaugen'.  This author
 availability of this prior work as a how-to guide.  (I'm a lifetime software and firmware
 programmer, but a relative novice in all things HA-related.)
 
+PLEASE READ THIS ENTIRE FILE BEFORE PROCEEDING. The icon library has minimal functionality, other
+than that of its primary purpose: providing a set of icons for Home Assistant not available in the
+standard MDI set. If the library "doesn't seem to work," the reason is likely related to one or both
+of the two notes added near the end of the file. This is also true if my library is used as a
+template for others' work.
+
 ________
 ADDITIONAL ICONS
 
-At the time of initial release, this library contains (43) 24x24 pixel SVG-based icons.  The mix is
+At the time of this writing, this library contains (54) 24x24 pixel SVG-based icons.  The mix is
 somewhat eclectic, and heavily music-based because, well, I'm a musician.  The MDI icon list is
 huge, but it doesn't have many icons specific to music and audio -- so I fixed that.  Some readers
 may find the library highly useful; others may think it's all a bunch of nonsense.  YMMV.
@@ -22,7 +28,8 @@ this library.  I make no promise that I will add them, though.  I am retired and
 is something of a hobby:
 
   * The more HA users who request a particular icon, the more likely that I will create it.  That said,
-    continually asking me to make your favorite icon will *not* improve the odds; in fact, it may have the opposite effect.
+    continually asking me to make your favorite icon will *not* improve the odds; in fact, it may have
+	the opposite effect.
 
   * If the icon is a small modification to one of my existing icons, I will probably add it.
 
@@ -35,7 +42,9 @@ MODIFYING THE LIBRARY
 
 Users are encouraged to hack and modify this library to meet personal needs.  If you release the
 results of your work, I ask that you credit both hulkhaugen and myself (drawbars37) as sources,
-as well as any other icon source used as a starting point for new icons.
+as well as any other icon source used as a starting point for new icons. (These are listed at the
+top of the file.)  I have made every attempt to use public-domain icons, or to contact the icon
+owner(s) for permission.  As such, there are very few product-related icons in the library.
 
 The overall structure of the library is a .js file with an array called 'BAW_ICONS_MAP' -- which
 can be changed if you create a new library -- containing a series of elements:
