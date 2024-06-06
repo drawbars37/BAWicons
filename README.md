@@ -95,3 +95,8 @@ icon: mdi:gauge
 icon: baw:sports-car
 ```
 
+* NOTE: This library is not searchable. Typing the partial name of an icon will not
+  create a suggestion list; nor is the library name (baw/BAW) searchable. Icons will
+  only appear if the full prefix and name is typed into the Icon field. If two icons
+  share a partial name (ex: sp-auto and sp-auto-variant) then the shorter-named icon
+  will appear first.
