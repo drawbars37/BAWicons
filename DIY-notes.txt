@@ -5,8 +5,25 @@ Assistant. The basis for my work is hass-bha-icons, and credit is due for that w
 Inkscape, a free SVG editor for my work; and Notepad++, a free code/text editor for the
 files.
 
+________
+A NOTE ABOUT SVG FILES
+
+SVG is a very flexible format for creating vector-based graphics. SVG files can be a
+collection of small images; or they can be a single image that appears to have many
+separate parts. An SVG file that displays as say, 100x100 pixels can actually be that size;
+or it can be a larger (or smaller) image that is scaled to fit a 100x100 window. SVG format
+supports more than one color, gradients, and other enhancements.
+
+Home Assistant does not support SVG format per se: it supports a *limited subset* of SVG-format icons. Many SVG files that display properly in a web browser will not display in
+Home Assistant, or they may have distortions or missing pieces.
+
+________
+GUIDELINES
+
   * To import icons into HA, they need to be a) single-path and b) of native size 24 x 24px.
-    This precludes using multicolor images or quickly adding a few bits on a new path.
+    This precludes using multicolor images or quickly adding a few bits on a new path. They
+    must also not have any coordinates that exist outside of a box defined by (0,0) and
+    (24,24) -- even if the file has commands to scale or shift the data to fit the box.
 
   * If the image has several paths, you can see this in the Objects section of Inkscape. If
     so, Select All and use the Path menu to combine them. Generally, Combine or Union works
@@ -18,10 +35,16 @@ files.
     Size is also 24x24 pixels. (Failing to do these steps is the #1 reason for icons that
     display as tiny dots!)
 
-  * Generally, I find that the easiest starting point is to find or create a 2-color image
-    of about 256 x 256 pixels in a graphics program. I use PaintShop Pro, but there are many
-    alternatives. Look for a simple, clean image, because small details will disappear at
-    24px x 24px; and square or near-square images work best.
+  * If the image is located outside the 24x24-pixel 'box,' select all elements and move them
+    inside that area.  It may be necessary to save the file, close it, and reopen the file
+    to see this offset.  If your new icon doesn't display, take a look at the <path> in the
+    SVG: there should be no coordinate less than (0,0) or more than (24.0, 24.0) in the data.
+
+  * Generally, I find that the easiest starting point is to find or create a 2-color
+    (monochrome) image of about 256 x 256 pixels and load it in a graphics program. I use
+    Corel PaintShop Pro, but there are many alternatives. Look for a simple, clean image,
+    because small details will disappear at 24x24px; and square or near-square images work
+    best.
 
   * Import the image to Inkscape, then trace the bitmap and delete the original. Now, you
     have a vector  version of the logo/element as a single layer. Scale the image to 24 x 24
@@ -57,4 +80,4 @@ NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. 
 That’s it! :-)
 
 Bruce Wahler
-12-Mar-2024
+17-Jul-2024
