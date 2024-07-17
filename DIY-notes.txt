@@ -1,0 +1,83 @@
+DIY NOTES
+
+This explains how to create and import icons into a Javascript library suitable for Home
+Assistant. The basis for my work is hass-bha-icons, and credit is due for that work. I use
+Inkscape, a free SVG editor for my work; and Notepad++, a free code/text editor for the
+files.
+
+________
+A NOTE ABOUT SVG FILES
+
+SVG is a very flexible format for creating vector-based graphics. SVG files can be a
+collection of small images; or they can be a single image that appears to have many
+separate parts. An SVG file that displays as say, 100x100 pixels can actually be that size;
+or it can be a larger (or smaller) image that is scaled to fit a 100x100 window. SVG format
+supports more than one color, gradients, and other enhancements.
+
+Home Assistant does not support SVG format per se: it supports a *limited subset* of SVG-format icons. Many SVG files that display properly in a web browser will not display in
+Home Assistant, or they may have distortions or missing pieces.
+
+________
+GUIDELINES
+
+  * To import icons into HA, they need to be a) single-path and b) of native size 24 x 24px.
+    This precludes using multicolor images or quickly adding a few bits on a new path. They
+    must also not have any coordinates that exist outside of a box defined by (0,0) and
+    (24,24) -- even if the file has commands to scale or shift the data to fit the box.
+
+  * If the image has several paths, you can see this in the Objects section of Inkscape. If
+    so, Select All and use the Path menu to combine them. Generally, Combine or Union works
+    best, but sometimes Difference or Exclusion provides better results. Experiment with
+    different types, and use Undo to see what I mean.
+
+  * Once you have an image that looks 'right,' scale the entire object to 24x24 pixels (or
+    slightly smaller). Be sure to check the Document Properties to make sure that the Custom
+    Size is also 24x24 pixels. (Failing to do these steps is the #1 reason for icons that
+    display as tiny dots!)
+
+  * If the image is located outside the 24x24-pixel 'box,' select all elements and move them
+    inside that area.  It may be necessary to save the file, close it, and reopen the file
+    to see this offset.  If your new icon doesn't display, take a look at the <path> in the
+    SVG: there should be no coordinate less than (0,0) or more than (24.0, 24.0) in the data.
+
+  * Generally, I find that the easiest starting point is to find or create a 2-color
+    (monochrome) image of about 256 x 256 pixels and load it in a graphics program. I use
+    Corel PaintShop Pro, but there are many alternatives. Look for a simple, clean image,
+    because small details will disappear at 24x24px; and square or near-square images work
+    best.
+
+  * Import the image to Inkscape, then trace the bitmap and delete the original. Now, you
+    have a vector  version of the logo/element as a single layer. Scale the image to 24 x 24
+    pixels. Save the new icon as an SVG.
+
+  * Open the SVG in a text editor. Scroll to an area that begins with <path d=". There will
+    be a long series of characters that begins with ‘M’ or ‘m’, and ends with ‘Z’ or ‘z’ –-
+    a space after the Z doesn’t matter. Copy that string into the clipboard as a single
+    line, with no Enter or other characters added.
+
+  * Open your icon library file in the text editor. In the section that starts with const,
+    create a line that contains the name of the icon in quotes, followed by a colon. Create
+    a second line that contains  the string in your paste buffer from Step 6, with quotes
+    around it, and a comma afterwards unless it’s the last entry.
+    
+       ```
+       const BAW_ICONS_MAP = {
+         "chair-lounge":
+           "M 6,7 C 6,5.89 6.89,5 8,5 h 8 c 1.1,0 … -2.34,-1.97 z",
+       etc.
+       ```
+
+  * Count up the number of icons in the map and set iconset.size to that number.
+
+________
+NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. If this
+      is the case with your setup, the new icon library will likely be blank. In the case
+      of Google Chrome, these elements are called the Browsing Data; the name may vary
+      with other browsers. If the saved data is deleted, the browser will recreate the
+      library and everything should work as expected.
+
+
+That’s it! :-)
+
+Bruce Wahler
+17-Jul-2024
