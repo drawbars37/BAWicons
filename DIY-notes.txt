@@ -67,8 +67,6 @@ GUIDELINES
        etc.
        ```
 
-  * Count up the number of icons in the map and set iconset.size to that number.
-
 ________
 NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. If this
       is the case with your setup, the new icon library will likely be blank. In the case
@@ -80,4 +78,4 @@ NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. 
 That’s it! :-)
 
 Bruce Wahler
-17-Jul-2024
+4-Jul-2025
