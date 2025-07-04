@@ -15,7 +15,7 @@ template for others' work.
 ________
 ADDITIONAL ICONS
 
-At the time of this writing, this library contains (54) 24x24 pixel SVG-based icons.  The mix is
+At the time of this writing, this library contains (65) 24x24 pixel SVG-based icons.  The mix is
 somewhat eclectic, and heavily music-based because, well, I'm a musician.  The MDI icon list is
 huge, but it doesn't have many icons specific to music and audio -- so I fixed that.  Some readers
 may find the library highly useful; others may think it's all a bunch of nonsense.  YMMV.
@@ -73,7 +73,8 @@ ________
 INSTALLING THE LIBRARY
 
 The .js file must be copied to the www directory of the Home Assistant client that executes HASS
-(Raspberry Pi, x64, etc.).
+(Raspberry Pi, x64, etc.). Generally, this will be ```/homeassistant/www``` (formerly: /config/www).
+If the directory doesn't already exist, create it.
 
 The configuration.yaml file must be modified to point to the .js file with the icons.  If your
 file doesn't already have a section called ```frontend:``` then create it:
@@ -86,11 +87,12 @@ frontend:
 
 If you plan to use more than one icon library, add it/them in this section.
 
-* NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. If this
+* NOTE: Most browsers cache the Lovelace UI elements from HA for faster response. If this
   is the case with your setup, the newly installed icon library will likely be blank.
   In the case of Google Chrome, these elements are called the Browsing Data; the name
   may vary with other browsers. If the saved data is deleted, the browser will
-  recreate the library and everything should work as expected.
+  recreate the library and everything should work as expected. If you modify the
+  library later, you will need to repeat this process every time the library is edited.
 
 
 ________
@@ -109,3 +111,18 @@ icon: baw:sports-car
   only appear if the full prefix and name is typed into the Icon field. If two icons
   share a partial name (ex: sp-auto and sp-auto-variant) then the shorter-named icon
   will appear first.
+
+
+________
+TESTING
+
+This icon library has been tested with the latest version of Home Assistant availble
+as of the release date; viewed with Google Chrome (x64), MS Edge (x86), and the Fully
+Kiosk Browser (Android OS). Other Web browsers should work, too, but have not been
+tested.
+
+
+________
+CONTRIBUTORS
+
+- GitHub user [Garnin](github.com/Garnin)
