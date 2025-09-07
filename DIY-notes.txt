@@ -14,7 +14,8 @@ separate parts. An SVG file that displays as say, 100x100 pixels can actually be
 or it can be a larger (or smaller) image that is scaled to fit a 100x100 window. SVG format
 supports more than one color, gradients, and other enhancements.
 
-Home Assistant does not support SVG format per se: it supports a *limited subset* of SVG-format icons. Many SVG files that display properly in a web browser will not display in
+Home Assistant does not support SVG format per se: it supports a *limited subset* of
+SVG-format icons. Many SVG files that display properly in a web browser will not display in
 Home Assistant, or they may have distortions or missing pieces.
 
 ________
@@ -51,9 +52,9 @@ GUIDELINES
     pixels. Save the new icon as an SVG.
 
   * Open the SVG in a text editor. Scroll to an area that begins with <path d=". There will
-    be a long series of characters that begins with ‘M’ or ‘m’, and ends with ‘Z’ or ‘z’ –-
-    a space after the Z doesn’t matter. Copy that string into the clipboard as a single
-    line, with no Enter or other characters added.
+    be a long series of characters that begins with ‘M’ or ‘m’, and *generally* (but not
+	always) ends with ‘Z’ or ‘z’ –- a space after the Z doesn’t matter. Copy that string into
+	the clipboard as a single line, with no Enter or other characters added.
 
   * Open your icon library file in the text editor. In the section that starts with const,
     create a line that contains the name of the icon in quotes, followed by a colon. Create
@@ -78,4 +79,4 @@ NOTE: Many browsers cache the Lovelace UI elements from HA for faster response. 
 That’s it! :-)
 
 Bruce Wahler
-4-Jul-2025
+7-Sep-2025

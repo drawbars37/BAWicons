@@ -1,6 +1,8 @@
 # BAWicons
 A collection of SVG icons for Home Assistant in a .js file suitable for execution
 
+Note:  This is the Rev 2.x style, with enhancements to display library elements.
+
 These are icons I've created for personal use.  They started as a small enhancement of
 hass-bha-icons, a similar collection from github user 'hulkhaugen'.  This author is indebted to the
 availability of this prior work as a how-to guide.  (I'm a lifetime software and firmware
@@ -15,7 +17,7 @@ template for others' work.
 ________
 ADDITIONAL ICONS
 
-At the time of this writing, this library contains (65) 24x24 pixel SVG-based icons.  The mix is
+At the time of this writing, this library contains (68) 24x24 pixel SVG-based icons.  The mix is
 somewhat eclectic, and heavily music-based because, well, I'm a musician.  The MDI icon list is
 huge, but it doesn't have many icons specific to music and audio -- so I fixed that.  Some readers
 may find the library highly useful; others may think it's all a bunch of nonsense.  YMMV.
@@ -53,12 +55,15 @@ can be changed if you create a new library -- containing a series of elements:
     with a larger native size will often work, but will result in tiny icons that need to be artificially
     expanded in Lovelace UIs; sometimes, the required expansion will have unwanted effects.
 
-  * The first line of the element contains the icon name in double-quotes, followed by a colon.
+  * The first line of the element contains the icon name in double-quotes, followed by a colon and a left
+    brace ({).
 
-  * The second line contains the path from the corresponding SVG file, stripped of any extra characters
-    not contained between the two double-quotes.
+  * The second line is an array called 'keywords'; the array is left blank.
+  
+  * The third line contains the path from the corresponding SVG file, stripped of any extra characters
+    not contained between the two double-quotes.  It is labeled as 'path.'
 
-  * The second line of every element *except the last one* should end with a comma.
+  * The fourth line is a right brace (}), and if not the last element then it should end with a comma.
 
 There are some other items near the bottom of the .js file that need to be changed:
 
@@ -66,8 +71,6 @@ There are some other items near the bottom of the .js file that need to be chang
     instances of the name.
 
   * The iconset.name is "baw".  If you create your own library, this name can be changed.
-
-  * The iconset.size should be updated to match the number of icons in the library.
 
 ________
 INSTALLING THE LIBRARY
@@ -98,7 +101,8 @@ If you plan to use more than one icon library, add it/them in this section.
 ________
 USING THE LIBRARY
 
-These icons can be used in a similar manner to the MDI set that are native to Home Assistant, substituting 'baw' for 'mdi' in the name:
+These icons can be used in a similar manner to the MDI set that are native to Home
+Assistant, substituting 'baw' for 'mdi' in the name:
 
 ```
 icon: mdi:gauge
@@ -106,11 +110,11 @@ icon: mdi:gauge
 icon: baw:sports-car
 ```
 
-* NOTE: This library is not searchable. Typing the partial name of an icon will not
-  create a suggestion list; nor is the library name (baw/BAW) searchable. Icons will
-  only appear if the full prefix and name is typed into the Icon field. If two icons
-  share a partial name (ex: sp-auto and sp-auto-variant) then the shorter-named icon
-  will appear first.
+* NOTE: This version of the library is searchable. Typing the word "baw" in the search
+  box will show the library, and adding a colon and a partial name of an icon will
+  create a suggestion list.  Thanks to HulkHaugen for showing how to set this up in
+  the latest version of the BHA Icons release; and to Scott Davis for pointing out that
+  the feature works in other libraries.
 
 
 ________
